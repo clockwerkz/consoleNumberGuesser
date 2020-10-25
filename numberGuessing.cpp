@@ -1,11 +1,12 @@
 #include <iostream>
 
-void gameFunction(int difficulty) {
+void PlayGameAtDifficulty(int difficulty) {
     std::cout << "Game difficulty will be: " << difficulty << ".";
 }
 
 
 int main() {
-    std::cout << "This is a test print \n";
-    gameFunction(45);
+    std::cout << "You are a secret agent trying to break into the secure server room. \n";
+    std::cout << "You need the correct codes to continue... \n";
+    return 0;
 }
