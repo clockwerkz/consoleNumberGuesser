@@ -1,9 +1,9 @@
 #include <iostream>
+#include <stdio.h>
 #include <stdlib.h>     /* srand, rand */
 #include <ctime> /* time */
 
 bool PlayGameAtDifficulty(int Difficulty) {
-    srand(time(0));
     const int CodeA = rand() % Difficulty + 1;
     const int CodeB = rand() % Difficulty + 1;
     const int CodeC = rand() % Difficulty + 1;
@@ -11,7 +11,7 @@ bool PlayGameAtDifficulty(int Difficulty) {
     const int CodeProduct = CodeA * CodeB * CodeC;
     std::cout << "LEVEL " << Difficulty << std::endl;
     std::cout << "+ There are 3 numbers in the code\n";
-    std::cout << "+ The numbers added together equal " << CodeSum << std::endl;
+    printf("+ The numbers added together equal d%\n", CodeSum);
     std::cout << "+ The numbers multiplied together equal " << CodeProduct << std::endl;
     std::cout << "Please enter your guesses: \n";
     int GuessA, GuessB, GuessC;
@@ -22,11 +22,11 @@ bool PlayGameAtDifficulty(int Difficulty) {
     const int GuessProduct = GuessA * GuessB * GuessC;
     if (GuessSum == CodeSum && GuessProduct == CodeProduct)
     {
-        std::cout << "NICE! You guessed Correctly! \n";
+        printf("NICE! You guessed Correctly! \n");
         return true;
     } else 
     {
-        std::cout << "Sorry that guess was incorrect. \n";
+        printf("Sorry that guess was incorrect. \n");
         return false;
     }
 
@@ -46,8 +46,9 @@ void PrintTitle()
 }
 
 int main() {
+    srand(time(0));
     PrintTitle();
-    std::cout << "You are a secret agent trying to break into the secure server room. \n";
+    std::cout << "\n\nYou are a secret agent trying to break into the secure server room. \n";
     std::cout << "You need the correct codes to continue... \n\n";
     std::cout << std::endl;
     int Difficulty = 2;
@@ -56,6 +57,8 @@ int main() {
         if (PlayGameAtDifficulty(Difficulty)) {
             Difficulty++;
         }
+        std::cin.clear();
+        std::cin.ignore();
 
     }
     return 0;
