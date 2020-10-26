@@ -11,7 +11,7 @@ bool PlayGameAtDifficulty(int Difficulty) {
     const int CodeProduct = CodeA * CodeB * CodeC;
     std::cout << "LEVEL " << Difficulty << std::endl;
     std::cout << "+ There are 3 numbers in the code\n";
-    printf("+ The numbers added together equal d%\n", CodeSum);
+    printf("+ The numbers added together equal %d\n", CodeSum);
     std::cout << "+ The numbers multiplied together equal " << CodeProduct << std::endl;
     std::cout << "Please enter your guesses: \n";
     int GuessA, GuessB, GuessC;
